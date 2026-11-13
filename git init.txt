@@ -1,0 +1,63 @@
+git init
+git add .
+git commit -m "Apuntes y ejercicios de practica en Python"
+git branch -M main
+git remote add origin https://github.com/TU-USUARIO/TU-REPOSITORIO.git
+git push -u origin main
+
+# ==============================================================================
+# TIPS EXTRA DE EMERGENCIA PARA LA EVALUACIÓN
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# TIP EXTRA 1: EVITAR DIVISIÓN POR CERO (Por si te piden promedios o porcentajes)
+# ------------------------------------------------------------------------------
+# Si en el resumen final te piden calcular un promedio (ej: total / cantidad),
+# asegúrate de que el divisor no sea 0 para que no lance ZeroDivisionError.
+
+total_puntos = 45
+cantidad_jugadores = 0
+
+if cantidad_jugadores > 0:
+    promedio = total_puntos / cantidad_jugadores
+    print(f"Promedio: {promedio}")
+else:
+    print("No se registraron jugadores para calcular promedio.")
+
+
+# ------------------------------------------------------------------------------
+# TIP EXTRA 2: COMPARAR TEXTO SIN IMPORTAR MAYÚSCULAS O MINÚSCULAS (.lower())
+# ------------------------------------------------------------------------------
+# Si te piden preguntar "¿Desea continuar? (si/no)", el usuario puede escribir
+# "SI", "Si", "si" o " si ". Usa .strip().lower() para atrapar todas:
+
+respuesta = input("¿Desea continuar? (si/no): ").strip().lower()
+
+if respuesta == "si":
+    print("Continuando...")
+elif respuesta == "no":
+    print("Finalizando...")
+
+
+# ------------------------------------------------------------------------------
+# TIP EXTRA 3: GUARDAR EL MAYOR O EL MENOR (Por si piden "el chef con más experiencia")
+# ------------------------------------------------------------------------------
+# Inicializa el mayor en 0 (o -1) antes del ciclo y ve actualizándolo:
+
+mayor_experiencia = -1
+codigo_mejor_chef = ""
+
+# Dentro del bucle, cuando ya validaste 'codigo' y 'experiencia':
+# if experiencia > mayor_experiencia:
+#     mayor_experiencia = experiencia
+#     codigo_mejor_chef = codigo
+
+
+# ------------------------------------------------------------------------------
+# TIP EXTRA 4: CÓMO LEER UN ERROR EN LA CONSOLA DE VS CODE SI ALGO FALLA
+# ------------------------------------------------------------------------------
+# No entres en pánico si sale texto rojo. Mira SIEMPRE la ÚLTIMA línea:
+# - SyntaxError: Te faltó cerrar un paréntesis ')', unas comillas '"' o los dos puntos ':' al final de if/while/for/else.
+# - IndentationError: Tienes espacios de más o de menos después de un ':' (usa la tecla Tab para ordenar).
+# - ValueError: Intentaste hacer int("texto"). Te faltó envolver ese input en try / except.
+# - NameError: Escribiste mal el nombre de una variable (ej: 'cantdad' en vez de 'cantidad').
